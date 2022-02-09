@@ -10,6 +10,10 @@ if ("DEVELOPMENT" === process.env.ENV) {
   // set special options
 }
 
+app.get("/", function (req, res) {
+  throw new Error("test"); // Why isn't this handled?
+});
+
 app.get("/hello", function (req, res) {
   return { message: "Hello, World!" };
 });
